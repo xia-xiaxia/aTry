@@ -19,6 +19,21 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    protected void Die()
+    {
+        // 敌人死亡逻辑
+        Destroy(gameObject);
     }
 }
